@@ -21,7 +21,6 @@ VIMRC="vimrc"
 if [ -e .git ]
 then
     git remote update
-    echo "AAA\n"
 fi
 
 if [ ! -e .gitmodules ]
@@ -34,7 +33,6 @@ then
     done < $MODULES 
 else
     git submodule foreach git pull origin master
-    echo "BBB\n"
 fi
 #install
 
