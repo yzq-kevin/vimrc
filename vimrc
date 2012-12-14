@@ -43,8 +43,13 @@ if has("gui_running")	" GUI color and font settings
   "set guifont=Osaka-Mono:h20
   set background=dark 
   "set t_Co=256          " 256 color mode
+  "colors moria
+  let g:solarized_termtrans=1
+  let g:solarized_termcolors=256
+  let g:solarized_contrast="high"
+  let g:solarized_visibility="high"
+  colorscheme solarized " my theme
   set cursorline        " highlight current line
-  colors moria
   highlight CursorLine          guibg=#003853 ctermbg=24  gui=none cterm=none
 else
 " terminal color settings
@@ -75,7 +80,7 @@ set wildignore=*.o,*.class,*.pyc
 
 set autoindent		" auto indentation
 set incsearch		" incremental search
-set nobackup		" no *~ backup files
+"set nobackup		" no *~ backup files
 set copyindent		" copy the previous indentation on autoindenting
 set ignorecase		" ignore case when searching
 set smartcase		" ignore case if search pattern is all lowercase,case-sensitive otherwise
@@ -140,6 +145,13 @@ au BufEnter * :lcd %:p:h " switch to current dir
 "au BufWinEnter *.* silent loadview
 " }
 "
+" ---- Backup {
+set backup " make backup file
+set backupdir=$VIM\backup " where to put backup file
+"set backupdir=c:\vim\backup " where to put backup file
+"set directory=c:\vim\temp " directory is the directory for temp file
+" }
+"
 " C/C++ specific settings
 autocmd FileType c,cpp,cc  set cindent comments=sr:/*,mb:*,el:*/,:// cino=>s,e0,n0,f0,{0,}0,^-1s,:0,=s,g0,h1s,p2,t0,+2,(2,)20,*30
 
@@ -164,8 +176,8 @@ endfun
 imap jj <ESC>
 
 " set leader to ,
-let mapleader=","
-let g:mapleader=","
+let mapleader="\\"
+let g:mapleader="\\"
 
 "replace the current word in all opened buffers
 map <leader>r :call Replace()<CR>
@@ -249,7 +261,7 @@ map <C-[> <ESC>:po<CR>
 map <leader>g :call IncludeGuard()<CR>
 fun! IncludeGuard()
    let basename = substitute(bufname(""), '.*/', '', '')
-   let guard = '_' . substitute(toupper(basename), '\.', '_', "H")
+   let guard = '__' . substitute(toupper(basename), '\.', '_', "H") . '__'
    call append(0, "#ifndef " . guard)
    call append(1, "#define " . guard)
    call append( line("$"), "#endif // for #ifndef " . guard)
@@ -264,6 +276,7 @@ autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType c set omnifunc=ccomplete#Complete
+"autocmd FileType cpp set omnifunc=cppcomplete#CompleteCPP
 autocmd FileType java set omnifunc=javacomplete#Complete
 
 " use syntax complete if nothing else available
@@ -346,9 +359,11 @@ endif
 let g:CommandTMaxHeight = 15
 
 " --- SuperTab
+"let g:SuperTabDefaultCompletionType = "<c-x><c+o>"
 let g:SuperTabDefaultCompletionType = "context"
 let g:SuperTabCompletionContexts = ['s:ContextText', 's:ContextDiscover']
 let g:SuperTabContextDiscoverDiscovery = ["&completefunc:<c-x><c-u>", "&omnifunc:<c-x><c-o>"]
+
 
 
 " --- EasyMotion
@@ -381,8 +396,18 @@ let g:tagbar_width = 30
 let g:tagbar_autoclose = 1
 let g:tagbar_autofocus = 1
 
+" ---- YankRing
+nnoremap <silent> <F11> :YRShow<CR>
+let g:yankring_history_dir = '$VIM/temp'
+let g:yankring_history_file = 'yankring_history.txt'
+
+" ---- Easy motion
+"let g:EasyMotion_leader_key = '<Leader>'
+
 " --- SnipMate
 let g:snipMateAllowMatchingDot = 0
+
+
 
 " --- coffee-script
 au BufWritePost *.coffee silent CoffeeMake! -b | cwindow | redraw! " recompile coffee scripts on write

@@ -36,7 +36,7 @@ else
 fi
 #install
 
-ln -s $VIMHOME/vimrc ~/.vimrc
-ln -s $VIMHOME ~/.vim
+ln -s ${VIMHOME}vimrc ~/.vimrc
+ln -s ${VIMHOME} ~/.vim
 
 

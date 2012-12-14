@@ -4,7 +4,6 @@ https://github.com/Townk/vim-autoclose.git bundle/autoclose
 https://github.com/wincent/Command-T.git bundle/command-t
 https://github.com/tpope/vim-surround.git bundle/surround
 https://github.com/Twinside/vim-cuteErrorMarker.git bundle/CuteErrorMarker
-https://github.com/msanders/snipmate.vim.git bundle/snipmate
 https://github.com/vim-scripts/YankRing.vim.git bundle/yankring
 https://github.com/vim-scripts/VisIncr.git bundle/VisIncr
 https://github.com/sukima/xmledit.git bundle/xmledit
