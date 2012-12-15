@@ -30,3 +30,5 @@ git://github.com/kchmck/vim-coffee-script.git bundle/vim-coffee-script
 git://github.com/tpope/vim-fugitive.git bundle/fugitive
 https://github.com/sandeepcr529/Buffet.vim.git bundle/buffet
 https://github.com/altercation/vim-colors-solarized.git bundle/solarized
+https://github.com/tomasr/molokai.git bundle/molokai
+https://github.com/vim-scripts/a.vim.git bundle/a-vim
