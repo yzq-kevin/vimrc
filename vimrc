@@ -68,6 +68,8 @@ endif
 
 
 set nu
+"set list " show chars on end of line, whitespace, etc
+"set listchars=eol:$,tab:|\ ,trail:.,extends:>,precedes:< " Show end of line as $... (see help)
 
 set clipboard=unnamed	" yank to the system register (*) by default
 set showmatch		" Cursor shows matching ) and }
@@ -80,7 +82,6 @@ set wildignore=*.o,*.class,*.pyc
 
 set autoindent		" auto indentation
 set incsearch		" incremental search
-"set nobackup		" no *~ backup files
 set copyindent		" copy the previous indentation on autoindenting
 set ignorecase		" ignore case when searching
 set smartcase		" ignore case if search pattern is all lowercase,case-sensitive otherwise
@@ -146,6 +147,7 @@ au BufEnter * :lcd %:p:h " switch to current dir
 " }
 "
 " ---- Backup {
+"set nobackup		" no *~ backup files
 set backup " make backup file
 set backupdir=$VIM\backup " where to put backup file
 "set backupdir=c:\vim\backup " where to put backup file

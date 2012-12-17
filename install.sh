@@ -27,16 +27,34 @@ if [ ! -e .gitmodules ]
 then
     while read url loc 
     do 
-        git submodule add $url $loc 
-        git submodule init && git submodule update
-        echo "$url $loc"
+        if [ ^? != '#' ]
+        then
+            git submodule add $url $loc 
+            git submodule init && git submodule update
+            echo "$url $loc"
+        fi
     done < $MODULES 
 else
     git submodule foreach git pull origin master
 fi
+
+
 #install
 
 ln -s ${VIMHOME}vimrc ~/.vimrc
 ln -s ${VIMHOME} ~/.vim
+
+if [ ! -e ~/.vim/backup ]
+then
+    mkdir -f ~/.vim/backup
+fi
+
+if [ ! -e ~/.vim/temp ]
+then
+    mkdir -f ~/.vim/temp 
+fi
+
+
+
 
 
