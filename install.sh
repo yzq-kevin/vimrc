@@ -27,7 +27,7 @@ if [ ! -e .gitmodules ]
 then
     while read url loc 
     do 
-        if [ ^? != '#' ]
+        if [ ${url:0:1} != '#' ]
         then
             git submodule add $url $loc 
             git submodule init && git submodule update
@@ -46,12 +46,12 @@ ln -s ${VIMHOME} ~/.vim
 
 if [ ! -e ~/.vim/backup ]
 then
-    mkdir -f ~/.vim/backup
+    mkdir ~/.vim/backup
 fi
 
 if [ ! -e ~/.vim/temp ]
 then
-    mkdir -f ~/.vim/temp 
+    mkdir ~/.vim/temp 
 fi
 
 
