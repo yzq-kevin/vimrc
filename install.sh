@@ -21,13 +21,14 @@ VIMRC="vimrc"
 if [ -e .git ]
 then
     git remote update
+    #git pull --rebase
 fi
 
 if [ ! -e .gitmodules ]
 then
     while read url loc 
     do 
-        if [ ^? != '#' ]
+        if [ ${url:0:1} != '#' ]
         then
             git submodule add $url $loc 
             git submodule init && git submodule update
