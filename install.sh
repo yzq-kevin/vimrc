@@ -21,7 +21,8 @@ VIMRC="vimrc"
 if [ -e .git ]
 then
     #git remote update
-    git pull --rebase
+    git reset --hard HEAD
+    git pull 
 fi
 
 if [ ! -e .gitmodules ]
