@@ -67,6 +67,7 @@ then
     git submodule add https://github.com/altercation/vim-colors-solarized.git bundle/solarized
     git submodule add https://github.com/tomasr/molokai.git bundle/molokai
     git submodule add https://github.com/vim-scripts/a.vim.git bundle/a-vim
+    git submodule add https://github.com/aaronbieber/quicktask.git bundle/quicktask
     #git submodule add git://github.com/mileszs/ack.vim.git bundle/ack.vim
     #git submodule add https://github.com/vim-scripts/Smart-Parentheses.git bundle/smart-parentheses
     #git submodule add https://github.com/wincent/Command-T.git bundle/command-t
