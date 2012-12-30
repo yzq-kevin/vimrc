@@ -37,10 +37,10 @@ git submodule add git://github.com/majutsushi/tagbar bundle/tagbar
 git submodule add https://github.com/vim-scripts/pythoncomplete.git bundle/pythoncomplete
 git submodule add https://github.com/Lokaltog/vim-powerline.git bundle/powerline
 git submodule add https://github.com/pangloss/vim-javascript.git bundle/vim-javascript
-git submodule add git://github.com/davidhalter/vim-snipmate.git bundle/vim-snipmate
-git submodule add https://github.com/tomtom/tlib_vim.git bundle/tlib_vim
-git submodule add https://github.com/MarcWeber/vim-addon-mw-utils.git bundle/vim-addon-mw-utils
-git submodule add https://github.com/honza/snipmate-snippets.git bundle/snipmate-snippets
+#git submodule add git://github.com/davidhalter/vim-snipmate.git bundle/vim-snipmate
+#git submodule add https://github.com/tomtom/tlib_vim.git bundle/tlib_vim
+#git submodule add https://github.com/MarcWeber/vim-addon-mw-utils.git bundle/vim-addon-mw-utils
+#git submodule add https://github.com/honza/snipmate-snippets.git bundle/snipmate-snippets
 git submodule add http://github.com/mattn/zencoding-vim.git bundle/zencoding-vim
 git submodule add git://github.com/kchmck/vim-coffee-script.git bundle/vim-coffee-script
 git submodule add git://github.com/tpope/vim-fugitive.git bundle/fugitive
@@ -50,6 +50,7 @@ git submodule add https://github.com/tomasr/molokai.git bundle/molokai
 git submodule add https://github.com/vim-scripts/a.vim.git bundle/a-vim
 git submodule add https://github.com/aaronbieber/quicktask.git bundle/quicktask
 git submodule add https://github.com/fmoralesc/vim-pad.git bundle/vim_pad
+git submodule add https://github.com/vim-scripts/UltiSnips.git bundle/ultiSnips
 #git submodule add git://github.com/mileszs/ack.vim.git bundle/ack.vim
 #git submodule add https://github.com/vim-scripts/Smart-Parentheses.git bundle/smart-parentheses
 #git submodule add https://github.com/wincent/Command-T.git bundle/command-t

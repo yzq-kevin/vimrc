@@ -257,7 +257,7 @@ inoremap <C-u>5 <esc>yypVr^A
 "--------------------------------------------------------------------------- 
 
 " Ctrl-[ jump out of the tag stack (undo Ctrl-])
-map <C-[> <ESC>:po<CR>
+"map <C-[> <ESC>:po<CR>
 
 " ,g generates the header guard
 map <leader>g :call IncludeGuard()<CR>
@@ -340,6 +340,8 @@ let g:tex_flavor='latex'
 "}
 
 
+" Ctrl-[ jump out of the tag stack (undo Ctrl-])
+"map <C-[> <ESC>:po<CR>
 " --- AutoClose - Inserts matching bracket, paren, brace or quote 
 " fixed the arrow key problems caused by AutoClose
 if !has("gui_running")	
@@ -358,13 +360,13 @@ endif
 
 
 " --- Command-T
-let g:CommandTMaxHeight = 15
+"let g:CommandTMaxHeight = 15
 
 " --- SuperTab
 "let g:SuperTabDefaultCompletionType = "<c-x><c+o>"
-let g:SuperTabDefaultCompletionType = "context"
-let g:SuperTabCompletionContexts = ['s:ContextText', 's:ContextDiscover']
-let g:SuperTabContextDiscoverDiscovery = ["&completefunc:<c-x><c-u>", "&omnifunc:<c-x><c-o>"]
+"let g:SuperTabDefaultCompletionType = "context"
+"let g:SuperTabCompletionContexts = ['s:ContextText', 's:ContextDiscover']
+"let g:SuperTabContextDiscoverDiscovery = ["&completefunc:<c-x><c-u>", "&omnifunc:<c-x><c-o>"]
 
 
 
@@ -388,21 +390,23 @@ let g:NERDTreeWinPos = "right"
 " ---- Bufferlist
 nnoremap <silent> <F3> :Bufferlist<CR> 
 
-" ---- Tasklist
-nnoremap <silent> <F4> :TaskList<CR> 
-
 " ---- Tabbar
-nnoremap <silent> <F5> :TagbarToggle<CR> 
+nnoremap <silent> <F4> :TagbarToggle<CR> 
 let g:tagbar_left = 0
 let g:tagbar_width = 30
 let g:tagbar_autoclose = 1
 let g:tagbar_autofocus = 1
+let g:tagbar_ctags_bin = '$VIM/bin/ctags.exe'
 
 " ---- YankRing
 nnoremap <silent> <F11> :YRShow<CR>
 let g:yankring_history_dir = '$VIM/temp'
 let g:yankring_history_file = 'yankring_history.txt'
 
+" ---- Tasklist
+nnoremap <silent> <F12> :QuickTask<CR> 
+autocmd BufNewFile, BufRead *.quicktask setf quicktask
+let g:DefaultTaskListFile = "$VIM/temp/tasklist.quicktask"
 " ---- Easy motion
 "let g:EasyMotion_leader_key = '<Leader>'
 
